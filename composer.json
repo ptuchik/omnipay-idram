@@ -1,0 +1,38 @@
+{
+    "name": "ptuchik/omnipay-idram",
+    "type": "library",
+    "description": "iDram gateway for Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "idram",
+        "purchase"
+    ],
+    "homepage": "https://github.com/ptuchik/omnipay-idram",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Avik Aghajanyan",
+            "email": "avik.aghajanyan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Omnipay\\Idram\\": "src/"
+        }
+    },
+    "require": {
+        "omnipay/common": "^3"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    }
+}
