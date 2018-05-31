@@ -79,7 +79,7 @@ class CompletePurchaseRequest extends PurchaseRequest
                 $requestData->get('EDP_TRANS_DATE');
 
             // Check hash against checksum and set success status
-            $data['success'] = strtoupper($_REQUEST['EDP_CHECKSUM']) == strtoupper(md5($txtToHash));
+            $data['success'] = strtoupper($requestData->get('EDP_CHECKSUM')) == strtoupper(md5($txtToHash));
         }
 
         return $data;
