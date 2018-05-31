@@ -2,7 +2,8 @@
 
 **iDram driver for the Omnipay Laravel payment processing library**
 
-[![Build Status](https://travis-ci.org/ptuchik/omnipay-idram.svg?branch=master)](https://travis-ci.org/ptuchik/omnipay-idram)
+[![Latest Stable Version](https://poser.pugx.org/ptuchik/omnipay-idram/version.png)](https://packagist.org/packages/ptuchik/omnipay-idram)
+[![Total Downloads](https://poser.pugx.org/ptuchik/omnipay-idram/d/total.png)](https://packagist.org/packages/ptuchik/omnipay-idram)
 
 [Omnipay](https://github.com/thephpleague/omnipay) is a framework agnostic, multi-gateway payment
 processing library for PHP 5.5+. This package implements iDram support for Omnipay.
