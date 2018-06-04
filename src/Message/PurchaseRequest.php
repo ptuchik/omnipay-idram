@@ -32,27 +32,6 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
-     * Sets the request order ID.
-     *
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function setOrderId($value)
-    {
-        return $this->setParameter('orderId', $value);
-    }
-
-    /**
-     * Get the request order ID.
-     * @return $this
-     */
-    public function getOrderId()
-    {
-        return $this->getParameter('orderId');
-    }
-
-    /**
      * Sets the request account ID.
      *
      * @param string $value
@@ -107,7 +86,7 @@ class PurchaseRequest extends AbstractRequest
             'EDP_REC_ACCOUNT' => $this->getAccountId(),
             'EDP_DESCRIPTION' => $this->getDescription(),
             'EDP_AMOUNT'      => $this->getAmount(),
-            'EDP_BILL_NO'     => $this->getOrderId()
+            'EDP_BILL_NO'     => $this->getTransactionId()
         ];
     }
 

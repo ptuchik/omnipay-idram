@@ -86,27 +86,6 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * Sets the request order ID.
-     *
-     * @param string $value
-     *
-     * @return $this
-     */
-    public function setOrderId($value)
-    {
-        return $this->setParameter('orderId', $value);
-    }
-
-    /**
-     * Get the request order ID.
-     * @return $this
-     */
-    public function getOrderId()
-    {
-        return $this->getParameter('orderId');
-    }
-
-    /**
      * Sets the request account ID.
      *
      * @param string $value
