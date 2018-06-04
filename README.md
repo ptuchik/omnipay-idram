@@ -46,7 +46,7 @@ Or you can simply run
     $gateway->setSecretKey(env('SECRET_KEY'));
     $gateway->setLanguage(\App::getLocale()); // Language
     $gateway->setAmount(10); // Amount to charge
-    $gateway->setOrderId(10); // Order ID from your system
+    $gateway->setTransactionId(XXXX); // Transaction ID from your system
 
 ```
 
