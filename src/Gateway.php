@@ -4,6 +4,8 @@ namespace Omnipay\Idram;
 
 use Omnipay\Common\Http\ClientInterface;
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Idram\Message\CompletePurchaseRequest;
+use Omnipay\Idram\Message\PurchaseRequest;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
@@ -136,7 +138,7 @@ class Gateway extends AbstractGateway
      */
     public function purchase(array $options = array())
     {
-        return $this->createRequest('\Omnipay\Idram\Message\PurchaseRequest', $options);
+        return $this->createRequest(PurchaseRequest::class, $options);
     }
 
     /**
@@ -148,6 +150,6 @@ class Gateway extends AbstractGateway
      */
     public function completePurchase(array $options = array())
     {
-        return $this->createRequest('\Omnipay\Idram\Message\CompletePurchaseRequest', $options);
+        return $this->createRequest(CompletePurchaseRequest::class, $options);
     }
 }
