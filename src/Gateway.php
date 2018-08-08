@@ -130,6 +130,27 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * Sets the request email.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function setEmail($value)
+    {
+        return $this->setParameter('email', $value);
+    }
+
+    /**
+     * Get the request email.
+     * @return $this
+     */
+    public function getEmail()
+    {
+        return $this->getParameter('email');
+    }
+
+    /**
      * Create a purchase request
      *
      * @param array $options

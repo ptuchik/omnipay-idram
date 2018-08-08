@@ -74,19 +74,41 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
+     * Sets the request email.
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function setEmail($value)
+    {
+        return $this->setParameter('email', $value);
+    }
+
+    /**
+     * Get the request email.
+     * @return $this
+     */
+    public function getEmail()
+    {
+        return $this->getParameter('email');
+    }
+
+    /**
      * Prepare data to send
      * @return array|mixed
      */
     public function getData()
     {
-        $this->validate('language', 'amount', 'returnUrl', 'cancelUrl', 'notifyUrl', 'accountId', 'secretKey', 'email');
+        $this->validate('language', 'amount', 'accountId', 'secretKey', 'email');
 
         return [
             'EDP_LANGUAGE'    => strtoupper($this->getLanguage()),
             'EDP_REC_ACCOUNT' => $this->getAccountId(),
             'EDP_DESCRIPTION' => $this->getDescription(),
             'EDP_AMOUNT'      => $this->getAmount(),
-            'EDP_BILL_NO'     => $this->getTransactionId()
+            'EDP_BILL_NO'     => $this->getTransactionId(),
+            'EDP_EMAIL'       => $this->getEmail(),
         ];
     }
 
