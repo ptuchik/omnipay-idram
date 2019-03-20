@@ -41,7 +41,7 @@ class CompletePurchaseRequest extends PurchaseRequest
         if ($requestData->has('EDP_BILL_NO') &&
             $requestData->has('EDP_AMOUNT') &&
             $requestData->get('EDP_PRECHECK') == 'YES' &&
-            $requestData->get('EDP_REC_ACCOUNT') == $this->getAccountId) {
+            $requestData->get('EDP_REC_ACCOUNT') == $this->getAccountId()) {
             die('OK');
         }
     }
