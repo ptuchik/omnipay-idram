@@ -95,21 +95,42 @@ class PurchaseRequest extends AbstractRequest
     }
 
     /**
+     * Set custom data to get back as is
+     *
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setCustomData(array $value)
+    {
+        return $this->setParameter('customData', $value);
+    }
+
+    /**
+     * Get custom data
+     * @return mixed
+     */
+    public function getCustomData()
+    {
+        return $this->getParameter('customData', []);
+    }
+
+    /**
      * Prepare data to send
-     * @return array|mixed
+     * @return array
      */
     public function getData()
     {
         $this->validate('language', 'amount', 'accountId', 'secretKey', 'email');
 
-        return [
+        return array_merge($this->getCustomData(), [
             'EDP_LANGUAGE'    => strtoupper($this->getLanguage()),
             'EDP_REC_ACCOUNT' => $this->getAccountId(),
             'EDP_DESCRIPTION' => $this->getDescription(),
             'EDP_AMOUNT'      => $this->getAmount(),
             'EDP_BILL_NO'     => $this->getTransactionId(),
             'EDP_EMAIL'       => $this->getEmail(),
-        ];
+        ]);
     }
 
     /**

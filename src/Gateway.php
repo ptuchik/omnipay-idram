@@ -101,7 +101,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Get the request account ID.
-     * @return $this
+     * @return mixed
      */
     public function getAccountId()
     {
@@ -122,7 +122,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Get the request secret key.
-     * @return $this
+     * @return mixed
      */
     public function getSecretKey()
     {
@@ -142,12 +142,33 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * Get the request email.
-     * @return $this
+     * Get the request email
+     * @return mixed
      */
     public function getEmail()
     {
         return $this->getParameter('email');
+    }
+
+    /**
+     * Set custom data to get back as is
+     *
+     * @param array $value
+     *
+     * @return $this
+     */
+    public function setCustomData(array $value)
+    {
+        return $this->setParameter('customData', $value);
+    }
+
+    /**
+     * Get custom data
+     * @return mixed
+     */
+    public function getCustomData()
+    {
+        return $this->getParameter('customData', []);
     }
 
     /**
