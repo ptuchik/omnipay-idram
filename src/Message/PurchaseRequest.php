@@ -112,7 +112,7 @@ class PurchaseRequest extends AbstractRequest
      */
     public function getCustomData()
     {
-        return $this->getParameter('customData', []);
+        return $this->getParameter('customData', []) ?? [];
     }
 
     /**
