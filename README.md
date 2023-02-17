@@ -40,14 +40,13 @@ Or you can simply run
 2. Initialize iDram gateway:
 
 ```php
-
     $gateway = Omnipay::create('Idram');
     $gateway->setAccountId(env('ACCOUNT_ID'));
     $gateway->setSecretKey(env('SECRET_KEY'));
-    $gateway->setLanguage(\App::getLocale()); // Language
-    $gateway->setAmount(10); // Amount to charge
-    $gateway->setTransactionId(XXXX); // Transaction ID from your system
-
+    $purchaseData = $gateway->purchase(); // Call purchase() to get PurchaseRequest instance
+    $purchaseData->setLanguage(\App::getLocale()); // Language
+    $purchaseData->setAmount(10); // Amount to charge
+    $purchaseData->setTransactionId(XXXX); // Transaction ID from your system
 ```
 
 3. Call purchase, it will automatically redirect to iDram's hosted page
