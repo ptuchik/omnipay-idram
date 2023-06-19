@@ -2,6 +2,7 @@
 
 namespace Omnipay\Idram\Message;
 
+use Illuminate\Support\Arr;
 use Omnipay\Common\Message\AbstractResponse;
 
 /**
@@ -25,7 +26,7 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function getTransactionId()
     {
-        return array_get($this->data, 'EDP_BILL_NO');
+        return Arr::get($this->data, 'EDP_BILL_NO');
     }
 
     /**
@@ -34,6 +35,6 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function getTransactionReference()
     {
-        return array_get($this->data, 'EDP_TRANS_ID');
+        return Arr::get($this->data, 'EDP_TRANS_ID');
     }
 }
